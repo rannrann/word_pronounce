@@ -10,18 +10,24 @@
             weight:30px;
             vertical-align: middle;
         }
-        p{
-            visibility: hidden;
-        }
+
     </style>
     <script>
-        var sound = new Audio();
-        sound.src = 'http://dict.youdao.com/dictvoice?type=1&audio=hello';
+        $(function () {
+            var sound = new Audio();
+            sound.src = 'http://dict.youdao.com/dictvoice?type=1&audio=hello';
+            $('#audio').on('click',function () {
+                sound.play();
+            });
+        });
+
+
+
     </script>
 </head>
 <body>
 <div>
-hello <a href="#" onmousedown="sound.play();"><img src="icons8-pastel-64.png"/></a>
+hello <a href="#" id="audio"><img src="icons8-pastel-64.png"/></a>
     <p id="test">abc</p>
 </div>
 </body>
